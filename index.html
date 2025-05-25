@@ -1,0 +1,95 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Informática!</title>
+    <link rel="stylesheet" href="estilos/styleindex.css">
+    <link rel="icon" href="imagens/fiveicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="navbar-brand">
+                    <a href="index.html">Quiz de Informática</a>
+                </div>
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li class="navbar-item">
+                        <a href="login.html" class="navbar-link" id="authLink">Acesse sua conta</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="ranking.html" class="navbar-link">Ranking</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="feedback.html" class="navbar-link">Feedback</a>
+                    </li>
+                </ul>
+                <button class="hamburger-menu" id="hamburgerMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="introMessage" class="intro-message-simple-container hidden">
+            <h2 class="intro-simple-title">Bem-vindo(a) ao Quiz de Informática!</h2>
+            <br>
+            <p class="intro-simple-text">
+                Prepare-se para testar seus conhecimentos e desafiar outros no ranking! Este Quiz foi desenvolvido por 5 alunos do 3º bimestre de Análise e Desenvolvimento de Sistemas: <br>
+                <strong>Allan, Nathan, Samuel, Diogo e Pedro.</strong>
+                <br>
+                Com uma arquitetura robusta, o quiz oferece 10 perguntas aleatórias por nível (Fácil, Médio, Difícil), temporizador dinâmico e cálculo de pontuação. Utilizamos Firebase Firestore para gerenciar perguntas, respostas, desempenho e ranking global, garantindo segurança e acompanhamento do seu progresso. Nosso objetivo é proporcionar uma experiência divertida, educativa e competitiva!
+            </p>
+            <button id="playQuizButton" class="intro-simple-button">
+                JOGAR QUIZ!
+            </button>
+        </div>
+
+        <div id="mainContent" class="main-quiz-content hidden">
+            <div id="typing-container">
+                <h1 id="typing-text"></h1><span id="cursor">|</span>
+            </div>
+            <div class="container">
+                <div class="coluna esquerda">
+                    <h1 id="titulo">
+                        Selecione o
+                        <br>
+                        Nível Do Quiz!
+                    </h1>
+                </div>
+                <div class="separador"></div>
+                <div class="colunadireita">
+                    <button class="botao botao-verde" onclick="startQuizLevel('facil')">
+                        Fácil! Não sei muito <br> sobre informática.
+                    </button>
+                    <br>
+                    <button class="botao botao-amarelo" onclick="startQuizLevel('medio')">
+                        Médio! Tenho um <br> certo conhecimento.
+                    </button>
+                    <br>
+                    <button class="botao botao-vermelho" onclick="startQuizLevel('dificil')">
+                        Difícil! Sou mestre <br> em informática.
+                    </button>
+                </div>
+            </div>
+            <h4 id="heading1"></h4>
+        </div>
+    </main>
+
+    <div id="customAlertModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center max-w-sm w-full mx-4">
+            <p id="customAlertMessage" class="mb-4 text-lg font-semibold text-gray-800"></p>
+            <button id="customAlertCloseButton" class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">OK</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/scriptindex.js"></script>
+</body>
+
+</html>
