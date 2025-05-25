@@ -1,0 +1,498 @@
+/* Reset básico para melhor controle */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(95, 158, 160);
+    font-family: "Roboto", sans-serif; /* Define a fonte principal para o corpo */
+    line-height: 1.6;
+    display: flex; /* Adicionado para centralizar o main */
+    flex-direction: column; /* Conteúdo em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+/* Fontes */
+h1, h2, h3, h4, h5, button {
+    font-family: "Tektur", sans-serif;
+}
+
+/* Títulos gerais */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3.4em; /* Use em para responsividade baseada no tamanho da fonte raiz */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo */
+}
+
+h4 {
+    text-align: center;
+    color: white;
+    font-size: 1.5em; /* Use em para responsividade */
+    margin-top: 20px; /* Adiciona um espaço acima */
+}
+
+/* --- Header e Navbar Responsivos --- */
+header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(94, 94, 94, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.navbar-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.navbar-brand {
+    font-family: "Tektur", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar-brand a {
+    color: rgb(95, 158, 160);
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-item {
+    margin-left: 2rem;
+}
+
+.navbar-link {
+    color: rgb(95, 158, 160);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: rgb(95, 158, 160);
+    border-bottom: 2px solid rgb(95, 158, 160);
+}
+
+.navbar-link.logged-in-link {
+    font-weight: bold;
+    color: rgb(95, 158, 160);
+    border-bottom: none !important;
+}
+
+.navbar-link.logged-in-link:hover {
+    color: rgb(95, 158, 160);
+    border-bottom: none !important;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: rgb(95, 158, 160);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* --- Container Principal com as Colunas (Responsivo com Flexbox) --- */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px; /* Limita a largura máxima para o main */
+    padding: 20px; /* Adiciona padding ao main */
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #e2e2e2;
+    height: 500px;
+    width: 100%; /* Agora ocupa 100% do main */
+    max-width: 1000px;
+    margin: 50px auto;
+    box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.5s ease;
+    border-radius: 1.5%;
+    overflow: hidden;
+}
+
+.container:hover {
+    box-shadow: 16px 8px 16px 8px rgba(145, 219, 221, 0.5);
+}
+
+.coluna {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#titulo {
+    color: rgb(95, 158, 160);
+    font-size: 4.5em;
+    margin-top: 0;
+    line-height: 1.1;
+}
+
+.separador {
+    width: 2px;
+    background-color: rgb(95, 158, 160);
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.colunadireita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+/* --- Estilos dos Botões de Nível --- */
+.colunadireita .botao {
+    width: 80%;
+    max-width: 280px;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(95, 158, 160);
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    height: auto;
+}
+
+.colunadireita .botao:hover {
+    transform: scale(1.05);
+}
+
+.botao-verde:hover {
+    background-color: rgb(64, 172, 64);
+}
+
+.botao-amarelo:hover {
+    background-color: rgb(235, 235, 83);
+    color: black;
+}
+
+.botao-vermelho:hover {
+    background-color: rgb(219, 49, 49);
+}
+
+/* --- Typing Container e Cursor --- */
+#typing-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#typing-text {
+    display: inline-block;
+    white-space: pre-wrap;
+}
+
+#cursor {
+    animation: blink 1s infinite step-end;
+    color: rgb(95, 158, 160);
+    font-size: 3.4em;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* --- Estilos para a Mensagem Introdutória Simples (introMessage) --- */
+.intro-message-simple-container {
+    background-color: #ffffff; /* Cor de fundo similar ao container principal */
+    padding: 30px;
+    border-radius: 1.5%; /* Mantém o arredondamento */
+    box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px; /* Largura máxima, ajuste conforme necessário */
+    margin: 50px auto; /* Centraliza e adiciona margem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Altura mínima para o container */
+    color: #333; /* Cor do texto para contraste com o fundo claro */
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+.intro-simple-title {
+    font-size: 2.5em; /* Tamanho maior para destaque */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: rgb(95, 158, 160); /* Cor de destaque */
+    font-family: "Tektur", sans-serif;
+}
+
+.intro-simple-text {
+    font-size: 1.1em;
+    margin-bottom: 1.5rem;
+    color: #555; /* Cor de texto mais escura para contraste */
+    line-height: 1.5;
+}
+
+.intro-simple-button {
+    padding: 12px 25px;
+    background-color: rgb(95, 158, 160);
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-family: "Tektur", sans-serif;
+    border: none;
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+.intro-simple-button:hover {
+    background-color: rgb(70, 120, 122); /* Tom mais escuro no hover */
+    transform: scale(1.05);
+}
+
+
+/* Estilos para o conteúdo principal do quiz (quando visível) */
+.main-quiz-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Classe hidden para ocultar elementos */
+.hidden {
+    display: none !important;
+}
+
+/* --- Estilos para o Modal de Alerta Customizado --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Acima de outros elementos */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    font-family: "Roboto", sans-serif;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal-button {
+    background-color: rgb(95, 158, 160);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: rgb(70, 120, 122);
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        padding: 1rem 0;
+        border-top: 1px solid #eee;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        margin: 0;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ajuste para cor da borda no menu mobile */
+    }
+
+    .navbar-item:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Ajustes para o container principal em telas menores */
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .coluna.esquerda {
+        padding-bottom: 0;
+    }
+
+    #titulo {
+        font-size: 3em;
+        margin-top: 10%;
+        padding-bottom: 20px;
+    }
+
+    .separador {
+        width: 80%;
+        height: 2px;
+        margin: 10px auto;
+    }
+
+    .colunadireita {
+        padding-top: 0;
+    }
+
+    .colunadireita .botao {
+        width: 90%;
+        font-size: 1.1em;
+        padding: 12px 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+    #cursor {
+        font-size: 2.5em;
+    }
+
+    /* Ajustes para a mensagem introdutória em telas menores */
+    .intro-message-simple-container {
+        padding: 20px;
+        margin: 20px auto;
+        min-height: 250px; /* Ajuste a altura mínima */
+    }
+
+    .intro-simple-title {
+        font-size: 2em;
+    }
+
+    .intro-simple-text {
+        font-size: 1em;
+    }
+
+    .intro-simple-button {
+        padding: 10px 20px;
+        font-size: 1.1em;
+    }
+}
+
+/* Telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    #cursor {
+        font-size: 2em;
+    }
+    #titulo {
+        font-size: 2.5em;
+    }
+    .colunadireita .botao {
+        width: 95%;
+        font-size: 1em;
+        padding: 10px 10px;
+    }
+
+    /* Ajustes para a mensagem introdutória em telas muito pequenas */
+    .intro-message-simple-container {
+        padding: 15px;
+        min-height: 200px; /* Ajuste a altura mínima */
+    }
+
+    .intro-simple-title {
+        font-size: 1.8em;
+    }
+
+    .intro-simple-text {
+        font-size: 0.9em;
+    }
+
+    .intro-simple-button {
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+}

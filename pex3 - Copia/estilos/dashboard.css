@@ -1,0 +1,352 @@
+/* Importação de Fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&display=swap');
+
+/* --- Estilos Gerais (Aplicados a todas as páginas) --- */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinha no centro verticalmente para dashboards menores */
+    min-height: 100vh; /* Garante que o body ocupa a altura total da viewport */
+    margin: 0; /* Remove margem padrão do body */
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+    padding: 20px; /* Padding para evitar que o conteúdo cole nas bordas em telas pequenas */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+/* Container principal para formulários e conteúdo */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-family: 'Tektur', cursive;
+    text-align: center;
+}
+
+/* Grupos de input (label + input) */
+.form-group, .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label, .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group textarea,
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group textarea {
+    width: 100%; /* Ajusta a largura para 100% */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box; /* Essencial para largura 100% com padding */
+}
+
+.form-group textarea, .input-group textarea {
+    resize: vertical;
+}
+
+/* Estilos para botões gerais */
+.botao, button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Garante que botões como links não tenham sublinhado */
+    display: inline-flex; /* Permite ícones ao lado do texto */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    justify-content: center; /* Centraliza conteúdo se houver espaço extra */
+}
+
+.botao:hover, button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mensagens de status (sucesso/erro) */
+.message {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.success {
+    color: green;
+}
+
+.message.error {
+    color: red;
+}
+
+/* --- Estilos Específicos para Login e Criar Conta --- */
+.link-to-login, .link-to-create {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.link-to-login a, .link-to-create a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link-to-login a:hover, .link-to-create a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o grupo de senha com ícone de olho */
+.password-group {
+    position: relative;
+}
+
+/* Ajusta a largura do input para dar espaço ao ícone */
+.password-group input {
+    padding-right: 40px; /* Adiciona padding à direita para o ícone */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 1.2em;
+}
+
+.toggle-password:hover {
+    color: #333;
+}
+
+
+/* --- Estilos Específicos para Feedback --- */
+.stars {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.stars .far.fa-star {
+    color: #ccc;
+}
+
+.stars .fas.fa-star {
+    color: #ffc107;
+}
+
+.stars i {
+    margin-right: 5px;
+    transition: color 0.2s ease;
+}
+
+#fundo {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+#feedbackList div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#feedbackList h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.2em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#feedbackList p {
+    margin: 5px 0;
+    color: #666;
+}
+
+#feedbackList .feedback-rating {
+    color: #ffc107;
+    font-size: 1.1em;
+}
+
+#feedbackList .feedback-date {
+    font-size: 0.9em;
+    color: #888;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#backToHomeButton {
+    background-color: #6c757d;
+    margin-top: 30px;
+}
+
+#backToHomeButton:hover {
+    background-color: #5a6268;
+}
+
+/* --- Estilos Específicos para Dashboard --- */
+.dashboard-container {
+    padding: 40px;
+    max-width: 800px; /* Um pouco mais largo para acomodar 4 botões */
+}
+
+.dashboard-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 25px;
+}
+
+.dashboard-container p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.dashboard-links {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    justify-content: center;
+    gap: 15px; /* Espaçamento entre os itens flex */
+    margin-bottom: 40px;
+}
+
+.dashboard-links .botao {
+    min-width: 180px; /* Garante uma largura mínima para botões */
+    flex: 1 1 auto; /* Permite que o botão cresça e encolha, mas com base no conteúdo */
+    max-width: 220px; /* Limita a largura máxima para que não fiquem gigantes */
+    padding: 15px 20px;
+    font-size: 1.1em;
+    /* Remover display: flex, align-items, justify-content daqui se já estiver no .botao geral */
+    /* Se você quiser ícones e texto alinhados em todos os botões, mantenha no .botao global */
+}
+
+.dashboard-links .botao i {
+    margin-right: 8px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+}
+
+.logout-button {
+    background-color: #dc3545;
+    font-size: 1.1em;
+    padding: 12px 30px;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Telas menores que 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start; /* Alinha no topo para que o conteúdo não fique espremido */
+        padding: 15px; /* Ajuste o padding do body */
+    }
+
+    .container, .dashboard-container {
+        padding: 20px;
+        margin: 10px auto; /* Centraliza com margem automática */
+        max-width: 95%; /* Ocupa mais largura em telas menores */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .botao, button[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .dashboard-links {
+        flex-direction: column; /* Empilha os botões em telas menores */
+        align-items: center; /* Centraliza os botões empilhados */
+        gap: 10px; /* Reduz o espaçamento entre botões empilhados */
+    }
+
+    .dashboard-links .botao {
+        width: 90%; /* Ocupa uma largura maior para facilitar o toque */
+        max-width: 350px; /* Aumentei um pouco o max-width para botões maiores em tablets */
+        font-size: 1em; /* Ajusta o tamanho da fonte */
+    }
+
+    .logout-button {
+        width: 90%; /* Botão sair ocupa largura total em telas menores */
+        max-width: 250px;
+        margin: 0 auto; /* Centraliza */
+    }
+}
+
+/* Telas muito pequenas (celulares com largura menor que 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container, .dashboard-container {
+        padding: 15px;
+        margin: 5px auto;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px; /* Reduz a margem inferior em telas menores */
+    }
+
+    .dashboard-container p {
+        font-size: 0.95em; /* Ligeira redução na fonte do parágrafo */
+        margin-bottom: 25px;
+    }
+
+    .dashboard-links .botao {
+        width: 100%; /* Botões ocupam 100% da largura em telas muito pequenas */
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .dashboard-links .botao i {
+        margin-right: 5px; /* Reduz o espaço do ícone em telas menores */
+    }
+
+    .logout-button {
+        width: 100%;
+    }
+}
